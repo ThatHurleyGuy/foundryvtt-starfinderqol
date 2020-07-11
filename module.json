@@ -1,0 +1,15 @@
+{
+  "name": "sfrpgqol",
+  "title": "SFRPG QOL",
+  "description": "QOL improvements for SFRPG system",
+  "version": "0.0.1",
+  "author": "thathurleyguy",
+  "scripts": ["./dist/main.js"],
+  "styles": ["./public/css/styles.css"],
+  "packs": [],
+  "minimumCoreVersion": "0.5.7",
+  "compatibleCoreVersion": "0.6.5",
+  "url": "https://github.com/thathurleyguy/foundryvtt-sfrpgqol",
+  "manifest": "https://github.com/thathurleyguy/foundryvtt-sfrpgqol/raw/master/module.json",
+  "download": "https://github.com/thathurleyguy/foundryvtt-sfrpgqol/archive/master.zip"
+}
