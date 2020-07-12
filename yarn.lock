@@ -378,6 +378,13 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/engine.io@*":
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/@types/engine.io/-/engine.io-3.1.4.tgz#3d9472711d179daa7c95c051e50ad411e18a9bdc"
+  integrity sha512-98rXVukLD6/ozrQ2O80NAlWDGA4INg+tqsEReWJldqyi2fulC9V7Use/n28SWgROXKm6003ycWV4gZHoF8GA6w==
+  dependencies:
+    "@types/node" "*"
+
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.1.tgz#42995b446db9a48a11a07ec083499a860e9138ff"
@@ -405,6 +412,13 @@
   dependencies:
     jest-diff "^24.3.0"
 
+"@types/jquery@*":
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.5.0.tgz#ccb7dfd317d02d4227dd3803c75297d0c10dad68"
+  integrity sha512-C7qQUjpMWDUNYQRTXsP5nbYYwCwwgy84yPgoTT7fPN69NH92wLeCtFaMsWeolJD1AF/6uQw3pYt62rzv83sMmw==
+  dependencies:
+    "@types/sizzle" "*"
+
 "@types/jquery@^3.3.31":
   version "3.3.35"
   resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.3.35.tgz#ab2cbf97e7a04b4dc0faee22b93c633fa540891c"
@@ -417,15 +431,35 @@
   resolved "https://registry.yarnpkg.com/@types/mustache/-/mustache-0.8.32.tgz#7db3b81f2bf450bd38805f596d20eca97c4ed595"
   integrity sha512-RTVWV485OOf4+nO2+feurk0chzHkSjkjALiejpHltyuMf/13fGymbbNNFrSKdSSUg1TIwzszXdWsVirxgqYiFA==
 
+"@types/node@*":
+  version "14.0.22"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.0.22.tgz#23ea4d88189cec7d58f9e6b66f786b215eb61bdc"
+  integrity sha512-emeGcJvdiZ4Z3ohbmw93E/64jRzUHAItSHt8nF7M4TGgQTiWqFVGB8KNpLGFmUHmHLvjvBgFwVlqNcq+VuGv9g==
+
 "@types/sizzle@*":
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/@types/sizzle/-/sizzle-2.3.2.tgz#a811b8c18e2babab7d542b3365887ae2e4d9de47"
   integrity sha512-7EJYyKTL7tFR8+gDbB6Wwz/arpGa0Mywk1TJbNzKzHtzbwVmY4HR9WqS5VV7dsBUKQmPNr192jHr/VpBluj/hg==
 
+"@types/socket.io@^2.1.4":
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/@types/socket.io/-/socket.io-2.1.8.tgz#ffc3aac0163a58bf50a463d50b1baabed91638cc"
+  integrity sha512-NIQfh9WwJuJKlgmby4NgwMpoBOmNPCDgaRNPiLYZBtkbHkszK/9R52B5yGkd5a34rbVdAADuo8FhOS/5AZDemw==
+  dependencies:
+    "@types/engine.io" "*"
+    "@types/node" "*"
+
 "@types/stack-utils@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
   integrity sha512-l42BggppR6zLmpfU6fq9HEa2oGPEI8yrSPL3GITjfRInppYFahObbIQOQK3UGxEnyQpltZLaPe75046NOZQikw==
+
+"@types/tinymce@^4.5.24":
+  version "4.5.24"
+  resolved "https://registry.yarnpkg.com/@types/tinymce/-/tinymce-4.5.24.tgz#e225e3fa82f0c2ac2039ef7c3a2b00c80cbde343"
+  integrity sha512-g2aFp+/GHTD6P2ZI2tBwZGIDi+64oocoDleCHtAWLYlFOR9fjPO+pdvmGjpJG3C7XeMZvugFx2NhRBL+Jb/wbQ==
+  dependencies:
+    "@types/jquery" "*"
 
 "@types/yargs-parser@*":
   version "15.0.0"
@@ -1834,6 +1868,14 @@ form-data@~2.3.2:
     asynckit "^0.4.0"
     combined-stream "^1.0.6"
     mime-types "^2.1.12"
+
+"foundry-pc-types@git+https://gitlab.com/foundry-projects/foundry-pc/foundry-pc-types.git":
+  version "0.1.0"
+  resolved "git+https://gitlab.com/foundry-projects/foundry-pc/foundry-pc-types.git#3e8898159d187021734b96dff8dc7942755f180d"
+  dependencies:
+    "@types/jquery" "^3.3.31"
+    "@types/socket.io" "^2.1.4"
+    "@types/tinymce" "^4.5.24"
 
 fragment-cache@^0.2.1:
   version "0.2.1"

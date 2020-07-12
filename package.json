@@ -18,6 +18,7 @@
     "@types/jest": "^24.0.24",
     "@types/jquery": "^3.3.31",
     "@types/mustache": "^0.8.32",
+    "foundry-pc-types": "git+https://gitlab.com/foundry-projects/foundry-pc/foundry-pc-types.git",
     "jest": "^24.9.0",
     "ts-jest": "^24.2.0",
     "ts-loader": "^6.2.1",

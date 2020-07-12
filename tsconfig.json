@@ -5,16 +5,17 @@
       "dom.iterable",
       "es2019"
     ],
-    "target": "es2019",
     "allowJs": false,
-    "sourceMap": true,
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "build"
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "build",
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2019",
+    "types": ["foundry-pc-types"]
   }
 }

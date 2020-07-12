@@ -1,61 +1,63 @@
-// begin foundry types
-interface IHooks {
-    on(event: string, callback: (chatLog: IChatLog, messageText: string, msg: IChatData) => void): void;
+const log = (...args: any[]) => console.log("SFRPG Qol | ", ...args)
+
+declare global {
+  interface Window { SFRPGQOL: any }
 }
 
-interface IChatData {
-    user: string;
-    content: string;
-}
-
-interface IChatLog {
-    tabName: string;
-}
-
-interface IChatMessage {
-    create(template: IChatData, options: object): void;
-}
-
-interface IUser {
-    id: string;
-}
-
-interface IGame {
-    user: IUser;
-}
-
-declare var Hooks: IHooks;
-declare var ChatMessage: IChatMessage;
-declare var game: IGame;
-
-// end foundry types
-
-// Hooks.on('init', () => {
-    // game.specialDiceRoller = specialDiceRoller;
-// });
-
-Hooks.on('chatMessage', (_: IChatLog, messageText: string, data: IChatData) => {
-  console.log(data);
-  if (messageText === 'foobar') {
-    console.log('fooooo');
-  }
-  // ChatMessage.create(data, {});
-  return false;
+Hooks.once("init", async () => {
+  log("Initializing sfrpg-qol")
+  window.SFRPGQOL = {
+    doRoll,
+  };
 });
 
-// Hooks.on('renderChatLog', () => {
-//     $('#chat-log').on('click', '.special-dice-roller button', (event: Event) => {
+// export async function doRoll(event, itemName, {type = "weapon", versatile=false, token = null}={type:"weapon", versatile: false, token: null}) {
+export async function doRoll(event: any, itemName: string): Promise<void> {
+  log(event)
+  log(`Rolling for ${itemName}`)
+}
+
+Hooks.on("hotbarDrop", (_hotbar: any, data: any, slot: number) => {
+  log("Handling hotbarDrop")
+  createMacro(data.data, slot)
+  return false
+});
+
+const createMacro = async (item: any, slot: number) => {
+  const command = `SFRPGQOL.doRoll(event, "${item.name}")`
+  log(command)
+  const macro = await Macro.create({
+    name: `${item.name} - ${item.type}`,
+    type: "script",
+    img: item.img,
+    command,
+    flags: { "sfrpg.itemMacro": true },
+  }, { displaySheet: false }) as Macro
+  await game.user.assignHotbarMacro(macro, slot)
+}
+
+Hooks.on("chatMessage", (_: any, messageText: string, data: any) => {
+  log(data)
+  if (messageText === "foobar") {
+    log("fooooo")
+  }
+  // ChatMessage.create(data, {})
+  return false
+});
+
+// Hooks.on("renderChatLog", () => {
+//     $("#chat-log").on("click", ".special-dice-roller button", (event: Event) => {
 //         event.preventDefault();
 //
 //         const button = event.target as HTMLButtonElement;
 //         const rollerKey = button.dataset.roller;
 //         const form = button.parentElement as HTMLFormElement;
-//         const rolls = Array.from(form.querySelectorAll('input'));
+//         const rolls = Array.from(form.querySelectorAll("input"));
 //         const selectedRolls = rolls.filter((roll) => roll.checked);
 //
 //         for (const roller of rollers) {
 //             if (selectedRolls.length > 0 && roller.command === rollerKey) {
-//                 if (button.classList.contains('special-dice-roller-keep') && roller.canKeep) {
+//                 if (button.classList.contains("special-dice-roller-keep") && roller.canKeep) {
 //                     const keptRolls = selectedRolls.map((roll) => parseRoll(roll));
 //                     const result = roller.formatKeptRolls(keptRolls);
 //                     renderNewRoll(result);
