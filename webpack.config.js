@@ -1,19 +1,7 @@
 module.exports = {
-    entry: './src/index.ts',
+    entry: './src/Main.ts',
     module: {
         rules: [
-            {
-                test: /\.tsx?$/,
-                enforce: 'pre',
-                use: [
-                    {
-                        loader: 'tslint-loader',
-                        options: {
-                            failOnHint: true,
-                        }
-                    }
-                ]
-            },
             {
                 test: /\.tsx?$/,
                 use: 'ts-loader',
