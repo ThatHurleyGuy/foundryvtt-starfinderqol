@@ -3,7 +3,7 @@ import {log} from "./Logger"
 const moduleSocket = "module.sfrpgqol"
 
 export class Message {
-  constructor(public actionName: string, public message: string, public intendedFor: string) { }
+  constructor(public actionName: string, public message: string, public intendedFor: string, public data: any) { }
 }
 
 export class Manager {

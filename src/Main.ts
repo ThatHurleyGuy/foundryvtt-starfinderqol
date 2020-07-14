@@ -6,13 +6,15 @@ declare global {
   interface Window { SFRPGQOL: any }
 }
 
-const handleDamagePost = async (data: any) => {
+const handleDamagePost = async (message: Message) => {
   log("Handling damage")
-  log(data)
+  const token = canvas.tokens.get(message.data.targetId)
+  await token.actor.update({
+    "data.attributes.hp.value": token.actor.data.data.attributes.hp.value - message.data.totalDamage,
+  })
 }
 
 const processSocketMessage = async (message: Message) => {
-  log(message.message)
   switch (message.actionName) {
     case "action_name":
       if (!game.user.isGM) {
@@ -47,11 +49,12 @@ export async function doRoll(event: any, itemName: string): Promise<void> {
   const initiateActor = token ? token.actor : game.actors.get(speaker.actor)
 
   game.user.targets.forEach(async (target) => {
-    // await target.actor.update({
-    //   "data.attributes.hp.value": target.actor.data.data.attributes.hp.value - 3,
-    // })
     const intendedGM = game.users.entities.find((u: User) => u.isGM && u.active)
-    const socketMessage = new Message("action_name", intendedGM!.id, "foobarbazmessage")
+    const attackData = {
+      targetId: target.data._id,
+      totalDamage: 9,
+    }
+    const socketMessage = new Message("action_name", intendedGM!.id, "foobarbazmessage", attackData)
     manager.broadcastData(socketMessage)
 
     const actor = target.actor
