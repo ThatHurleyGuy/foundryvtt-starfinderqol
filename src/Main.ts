@@ -1,9 +1,10 @@
+import {sendHitMessage} from "./ChatManager"
 import { log } from "./Logger"
 import {createMacro} from "./Macro"
 import {Manager, Message} from "./Socket"
 
 declare global {
-  interface Window { SFRPGQOL: any }
+  interface Window { StarfinderQOL: any }
 }
 
 const handleDamagePost = async (message: Message) => {
@@ -27,8 +28,8 @@ const processSocketMessage = async (message: Message) => {
 
 let manager: Manager
 Hooks.once("init", async () => {
-  log("Initializing sfrpg-qol")
-  window.SFRPGQOL = {
+  log("Initializing starfinder-qol")
+  window.StarfinderQOL = {
     doRoll,
   }
 })
@@ -36,11 +37,6 @@ Hooks.once("init", async () => {
 Hooks.once("ready", async () => {
   manager = new Manager(processSocketMessage)
 })
-
-const MESSAGETYPES = {
-    hitData: 1,
-    saveData: 2,
-}
 
 // export async function doRoll(event, itemName, {type = "weapon", versatile=false, token = null}={type:"weapon", versatile: false, token: null}) {
 export async function doRoll(event: any, itemName: string): Promise<void> {
@@ -67,15 +63,7 @@ export async function doRoll(event: any, itemName: string): Promise<void> {
       targetAttributes: attributes,
       damageAppliedString: "Nailed it.",
     }
-    const messageContent = await renderTemplate("modules/sfrpgqol/public/templates/hits.html", templateData)
-    const chatData = {
-      user: game.user._id,
-      speaker: { actor, alias: actor?.name },
-      content: messageContent,
-      type: CONST.CHAT_MESSAGE_TYPES.OTHER,
-      flags: { sfrpgQolType: MESSAGETYPES.hitData },
-    }
-    ChatMessage.create(chatData)
+    sendHitMessage(templateData, actor)
   })
 }
 

@@ -1,7 +1,7 @@
-.sfrpg-qol-full-damage-button,
-.sfrpg-qol-half-damage-button,
-.sfrpg-qol-double-damage-button,
-.sfrpg-qol-full-healing-button
+.starfinder-qol-full-damage-button,
+.starfinder-qol-half-damage-button,
+.starfinder-qol-double-damage-button,
+.starfinder-qol-full-healing-button
  {
 	width: 22px;
 	height:22px;
@@ -9,16 +9,16 @@
 	line-height:1px
 }
 
-.sfrpg-qol-flex-container {
+.starfinder-qol-flex-container {
 	display: flex;
 	align-items: center;
 	flex-flow: row;
 	padding: 3px;
 }
 
-.sfrpg-qol-target-name:hover {
+.starfinder-qol-target-name:hover {
 	text-shadow: 0 0 4px red;
 }
-.sfrpg-qol-gmonly {
+.starfinder-qol-gmonly {
 	display: none;
 }

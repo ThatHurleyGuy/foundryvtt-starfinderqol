@@ -1,7 +1,7 @@
 {
-  "name": "sfrpgqol",
-  "title": "SFRPG QOL",
-  "description": "QOL improvements for SFRPG system",
+  "name": "starfinderqol",
+  "title": "Starfinder QOL",
+  "description": "QOL improvements for Starfinder system",
   "version": "0.0.1",
   "author": "thathurleyguy",
   "scripts": ["./dist/main.js"],
@@ -10,7 +10,7 @@
   "socket": true,
   "minimumCoreVersion": "0.5.7",
   "compatibleCoreVersion": "0.6.5",
-  "url": "https://github.com/thathurleyguy/foundryvtt-sfrpgqol",
-  "manifest": "https://github.com/thathurleyguy/foundryvtt-sfrpgqol/raw/master/module.json",
-  "download": "https://github.com/thathurleyguy/foundryvtt-sfrpgqol/archive/master.zip"
+  "url": "https://github.com/thathurleyguy/foundryvtt-starfinderqol",
+  "manifest": "https://github.com/thathurleyguy/foundryvtt-starfinderqol/raw/master/module.json",
+  "download": "https://github.com/thathurleyguy/foundryvtt-starfinderqol/archive/master.zip"
 }

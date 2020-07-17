@@ -1,6 +1,6 @@
 import {log} from "./Logger"
 
-const moduleSocket = "module.sfrpgqol"
+const moduleSocket = "module.starfinderqol"
 
 export class Message {
   constructor(public actionName: string, public message: string, public intendedFor: string, public data: any) { }

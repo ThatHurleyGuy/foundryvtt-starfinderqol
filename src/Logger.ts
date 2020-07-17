@@ -1,1 +1,1 @@
-export function log(...args: any[]): void { console.log("SFRPG Qol | ", ...args) }
+export function log(...args: any[]): void { console.log("Starfinder Qol | ", ...args) }
