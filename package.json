@@ -6,11 +6,12 @@
   "license": "AGPL",
   "private": true,
   "dependencies": {
+    "lodash": "^4.17.19",
     "mustache": "^3.2.0"
   },
   "scripts": {
     "test": "./node_modules/.bin/jest",
-    "build": "./node_modules/.bin/webpack --mode production",
+    "build": "./node_modules/.bin/webpack --mode development",
     "fix": "./node_modules/.bin/tslint --fix --project .",
     "lint": "./node_modules/.bin/tslint --project ."
   },
