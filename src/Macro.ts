@@ -5,7 +5,7 @@ export const createMacro = async (item: any, slot: number) => {
     type: "script",
     img: item.img,
     command,
-    flags: { "sfrpgqol.itemMacro": true },
+    flags: { "starfinderqol.itemMacro": true },
   }) as Macro
   await game.user.assignHotbarMacro(macro, slot)
 }
